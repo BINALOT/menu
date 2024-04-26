@@ -9,10 +9,114 @@
 <body>
 
 
+<div class="container">
+        <div class="checkoutLayout">
+            <div class="returnCart">
+                <a href="file:///C:/Users/user/Desktop/ricemeal/index.html">Keep Shopping</a>
+                <h1>List Product In Cart</h1>
+                <div class="list">
+                    <div class="item">
+                        <img src="porkfried.jpg" alt="">
+                        <div class="info">
+                            <div class="name">Bagnet</div>
+                            <div class="price">P 50/1 product</div>
+                        </div>
+                        <div class="quantity">1</div>
+                        <div class="returnPrice">P 50</div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <form action="https://api.web3forms.com/submit" method="POST">
+                <h1>CHECKOUT</h1>
+                    <div class="group">
+                        <input type="hidden" name="access_key" value="6346860b-6f8c-4019-b39c-1596a6bc424a">
+                        <label for="">Full Name</label>
+                        <input type="text" name="full name" class="name" required>
+                    </div>
+                    <div class="group">
+                        <label for="">Address</label>
+                        <input type="text" name="address" class="address" required>
+                    </div>
+                    <div class="group">
+                        <label for="">Contact Number</label>
+                        <input type="text" name="phone number" class="number" maxlength="11" required>
+                    </div>
+                    <div class="group">
+                        <label for="">Gender</label>
+                        <select name="gender" class="gender" required>
+                            <option value="">Choose...</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+                
+                    <div class="group">
+                        <label for="">Mode of payment</label>
+                        <select name="paymentMethod" id="paymentMethod" required onchange="toggleFields()">
+                            <option value="">Choose...</option>
+                            <option value="Gcash">Gcash</option>
+                            <option value="Cash on Delivery">Cash on Delivery</option>
+                        </select>
+                    </div>
+                    <div class="group">
+                    <h4>Gcash Name:</h4> 
+                    <h5>Lyka Monreal</h5>
+            <h4>Gcash Number:</h4> 
+            <h5>09453500095</h5>
+            
+            <h6>Note: Please take a screenshot if you will use gcash</h6></div>
+            <div class="terms">
+                <input type="checkbox" id="termsCheckbox" name="termsCheckbox" required>
+                <label for="termsCheckbox"><a href="/terms_and_conditions">I agree to the Terms and Conditions</a></label>
+              </div>
 
+            <div class="group" id="photoUploadGroup" style="display:none;">
+                <label for="photo">Upload a Screenshot:</label>
+                <input type="file" id="photo" name="photo" accept="image/*" required>
+            </div>
+            <div class="group" id="amountInputGroup" style="display:none;">
+                <label for="amount">Cash you have:</label>
+                <input type="text" id="amount" name="amount" required>
+            </div>
+                <div class="return">
+                    <div class="row">
+                        <div>Total Quantity</div>
+                        <div class="totalQuantity" name="totalQuantity" class="totalQuantity">60</div>
+                    </div>
+                    <div class="row">
+                        <div>Total Price</div>
+                        <div class="totalPrice" name="totalPrice" class="totalPrice">P 60</div>
+                    </div>
+                </div>
+            
+                <button type="submit">Submit Form</button>
+            </form>
             </div>
         </div>
     </div>
+
+    <script>
+        function toggleFields() {
+            var paymentMethod = document.getElementById("paymentMethod").value;
+            var photoUploadGroup = document.getElementById("photoUploadGroup");
+            var amountInputGroup = document.getElementById("amountInputGroup");
+
+            if (paymentMethod === "Gcash") {
+                photoUploadGroup.style.display = "block";
+                amountInputGroup.style.display = "none";
+            } else if (paymentMethod === "Cash on Delivery") {
+                photoUploadGroup.style.display = "none";
+                amountInputGroup.style.display = "block";
+            } else {
+                photoUploadGroup.style.display = "none";
+                amountInputGroup.style.display = "none";
+            }
+        }
+    </script>
+
+
+  
 
     
 </body>
