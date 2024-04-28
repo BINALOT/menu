@@ -60,6 +60,11 @@ nav ul li:hover::after{
     width: 100%;
 
 }
+header, footer {
+    text-align: center;
+    padding: 20px;
+}
+
 .image-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
