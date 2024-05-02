@@ -53,7 +53,11 @@ function addDataToHTML() {
                     <div class='img-box'>
                         <img class='image' src="${product.image}" />
                     </div>
-                
+                <div class='bottom'>
+    <h2>${product.name}</h2>
+    <div class="price">P${product.price}</div>
+   
+</div>
                 </div>`;
             listProductHTML.appendChild(newProduct);
         });
